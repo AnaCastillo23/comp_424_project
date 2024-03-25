@@ -23,7 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('Dark\ Blue\ Simple\ Dark\ Tech\ and\ Gaming\ Bio-Link\ Website.png') no-repeat;
+    background: url('backgrounds/img1.png') no-repeat;
     background-size: cover;
     background-position: center;
     
@@ -41,8 +41,6 @@ body {
     overflow: hidden;
 }
 
-
-
 .wrapper h1 {
     font-size: 36px;
     text-align: center;
@@ -54,6 +52,10 @@ body {
     width: 100%;
     height: 50px;
     margin: 30px 0;
+}
+
+.wrapper .dob-text {
+    margin-bottom: -20px;
 }
 
 .input-box input {
@@ -86,8 +88,6 @@ body {
     font-size: 20px;
     display: inline;
 }
-
-
 
 .wrapper .remember-forgot {
     display: flex;
@@ -177,5 +177,26 @@ text-decoration: none;
 }
 
 .sign-in-link p a:active {
+    opacity: 0.5;
+}
+
+
+.wrapper .go-back-to-login-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.go-back-to-login-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.go-back-to-login-link p a:hover {
+    color: rgb(145, 8, 54);
+}
+
+.go-back-to-login-link p a:active {
     opacity: 0.5;
 }
