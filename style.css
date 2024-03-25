@@ -12,6 +12,9 @@ html {
     height: 100%;
 }
 
+input {
+    color-scheme: dark;
+}
 
 body {
     overflow: auto;
@@ -26,10 +29,6 @@ body {
     
 }
 
-input {
-    color-scheme: dark;
-}
-
 .wrapper {
     width: 500px;
     background: transparent;
@@ -42,21 +41,6 @@ input {
     overflow: hidden;
 }
 
-.form-wrapper {
-    transition: 1s ease-in-out;
-}
-.wrapper.active .form-wrapper.sign-in {
-    transform: translateY(-450px);
-}
-
-.wrapper .form-wrapper.sign-up {
-    position: absolute;
-    top: 450px;
-}
-
-.wrapper.active .form-wrapper.sign-up {
-    transform: translateY(-450px);
-}
 
 
 .wrapper h1 {
@@ -113,7 +97,7 @@ input {
 }
 
 .remember-forgot label input {
-    accent-color: #fff;
+    accent-color: rgb(145, 8, 54);
     margin-right: 3px;
 }
 
@@ -123,7 +107,11 @@ text-decoration: none;
 }
 
 .remember-forgot a:hover {
-    text-decoration: underline;
+    color: rgb(145, 8, 54);
+}
+
+.remember-forgot a:active {
+    opacity: 0.5;
 }
 
 .wrapper .btn {
@@ -151,20 +139,43 @@ text-decoration: none;
     opacity: 0.5;
 }
 
-
-.wrapper .register-link {
+.wrapper .sign-up-link {
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
 }
 
-.register-link p a {
+.sign-up-link p a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
 
-.register-link p a:hover {
-    text-decoration: underline;
+.sign-up-link p a:hover {
+    color: rgb(145, 8, 54);
 }
 
+.sign-up-link p a:active {
+    opacity: 0.5;
+}
+
+
+.wrapper .sign-in-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.sign-in-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sign-in-link p a:hover {
+    color: rgb(145, 8, 54);
+}
+
+.sign-in-link p a:active {
+    opacity: 0.5;
+}
