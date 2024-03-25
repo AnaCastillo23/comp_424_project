@@ -7,10 +7,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-html {
-    overflow: hidden;
-    height: 100%;
-}
+
 
 body {
     overflow: auto;
@@ -22,10 +19,15 @@ body {
     background: url('Dark\ Blue\ Simple\ Dark\ Tech\ and\ Gaming\ Bio-Link\ Website.png') no-repeat;
     background-size: cover;
     background-position: center;
+    
+}
+
+input {
+    color-scheme: dark;
 }
 
 .wrapper {
-    width: 428px;
+    width: 500px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
@@ -33,7 +35,25 @@ body {
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
+    overflow: hidden;
 }
+
+.form-wrapper {
+    transition: 1s ease-in-out;
+}
+.wrapper.active .form-wrapper.sign-in {
+    transform: translateY(-450px);
+}
+
+.wrapper .form-wrapper.sign-up {
+    position: absolute;
+    top: 450px;
+}
+
+.wrapper.active .form-wrapper.sign-up {
+    transform: translateY(-450px);
+}
+
 
 .wrapper h1 {
     font-size: 36px;
@@ -77,9 +97,9 @@ body {
     vertical-align: middle;
     font-size: 20px;
     display: inline;
-    
-    
 }
+
+
 
 .wrapper .remember-forgot {
     display: flex;
@@ -112,10 +132,21 @@ text-decoration: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
     font-size: 16px;
-    color: #333;
+    color: rgb(145, 8, 54);
     font-weight: 600;
     margin-top: 20px;
+    transition: background-color 0.15s, color 0.15s;
 }
+
+.btn:hover {
+    background-color: rgb(145, 8, 54);
+    color: white;
+}
+
+.btn:active {
+    opacity: 0.5;
+}
+
 
 .wrapper .register-link {
     font-size: 14.5px;
