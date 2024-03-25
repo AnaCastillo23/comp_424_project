@@ -12,13 +12,17 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: seagreen;
+    background: url('img_1.png') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .wrapper {
     width: 428px;
-    background: purple;
+    background: rgb(95, 95, 95);
     color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
 }
 
 .wrapper h1 {
@@ -58,3 +62,64 @@ body {
     transform: translateY(-50%);
     font-size: 20px;
 }
+
+.wrapper .material-symbols-outlined {
+    vertical-align: middle;
+    font-size: 20px;
+    display: inline;
+    
+    
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+color: #fff;
+text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
