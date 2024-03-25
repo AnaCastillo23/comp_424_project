@@ -7,19 +7,29 @@
     font-family: "Poppins", sans-serif;
 }
 
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
 body {
+    overflow: auto;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('img_1.png') no-repeat;
+    background: url('Dark\ Blue\ Simple\ Dark\ Tech\ and\ Gaming\ Bio-Link\ Website.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .wrapper {
     width: 428px;
-    background: rgb(95, 95, 95);
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
