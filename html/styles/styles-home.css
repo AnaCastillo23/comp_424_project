@@ -1,12 +1,26 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
     overflow: auto;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     min-height: 100vh;
-    background: url('home-page-back.png') no-repeat;
+    background: url('Home.png') no-repeat;
     background-size: cover;
     background-position: center;
-    
+       
+}
+.welcome-wrapper .welcome-text {
+    font-size: 20px;
+    color: white;
+    margin-top: 100px;
 }

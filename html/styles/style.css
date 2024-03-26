@@ -38,7 +38,7 @@ body {
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
-    position: inherit;
+    overflow: hidden;
 }
 
 .wrapper h1 {
