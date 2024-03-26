@@ -56,6 +56,7 @@ body {
 
 .wrapper .dob-text {
     margin-bottom: -20px;
+    margin-inline-start: 20px;
 }
 
 .input-box input {
@@ -88,6 +89,16 @@ body {
     font-size: 20px;
     display: inline;
 }
+
+.wrapper .indicator {
+    margin-top: -20px;    
+}
+
+.indicator .icon-text {
+    display: flex;
+    align-items: center;
+}
+
 
 .wrapper .remember-forgot {
     display: flex;
