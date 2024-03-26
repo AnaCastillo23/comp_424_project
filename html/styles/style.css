@@ -51,7 +51,7 @@ body {
     position: relative;
     width: 100%;
     height: 50px;
-    margin: 30px 0;
+    margin: 30px 0 20px;
 }
 
 .wrapper .dob-text {
@@ -84,20 +84,38 @@ body {
     font-size: 20px;
 }
 
+
+
 .wrapper .material-symbols-outlined {
     vertical-align: middle;
     font-size: 20px;
     display: inline;
 }
 
-.wrapper .indicator {
-    margin-top: -20px;    
+
+.wrapper.weak .indicator::after {
+    content: 'Password is weak';
+    font-size: 15px;
+    color: rgb(145, 8, 54);
+    
+
 }
 
-.indicator .icon-text {
-    display: flex;
-    align-items: center;
+.wrapper.medium .indicator::after {
+    content: 'Password is medium';
+    font-size: 15px;
+    color: rgb(255, 178, 54);
+    
+
 }
+
+.wrapper.strong .indicator::after {
+    content: 'Password is strong';
+    font-size: 15px;
+    color: rgb(17, 130, 54);
+
+}
+
 
 
 .wrapper .remember-forgot {
