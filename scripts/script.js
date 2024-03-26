@@ -29,13 +29,21 @@ function Strength(passwordInput) {
 }
 
 let wrapper = document.querySelector('.wrapper');
-document.addEventListener("keyup", function(e){
-    let passwordInput = document.querySelector("input").value;
+document.addEventListener('keyup', function(e){
+    let passwordInput = document.querySelector('input').value;
 
     let strength = Strength(passwordInput);
     if(strength <=2) {
         wrapper.classList.add('weak');
         wrapper.classList.remove('medium');
         wrapper.classList.remove('strong');
+    } else if (strength >= 2 || strength <= 4) {
+        wrapper.classList.remove('weak');
+        wrapper.classList.add('medium');
+        wrapper.classList.remove('strong');
+    } else {
+        wrapper.classList.remove('weak');
+        wrapper.classList.remove('medium');
+        wrapper.classList.add('strong');
     }
 })
