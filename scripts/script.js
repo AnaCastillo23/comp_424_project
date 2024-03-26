@@ -46,5 +46,28 @@ document.addEventListener("keyup",function(e){
     }
 })
 
+function checkPassword() {
+    let passwordInput = document.querySelector('#myPassword').value;
+    let confirmPassword = document.querySelector('#myPasswordReentered').value;
+    console.log(passwordInput,confirmPassword);
+    let message = document.getElementById("message");
+
+    if (passwordInput.length != 0) {
+        if (passwordInput !== confirmPassword) {
+            message.textContent = "Passwords do not match";
+            
+
+        } else {
+            //GET RID OF PASSWORD NOT MATCHING MESSAGE
+            message.textContent = " ";
+            //SEND USER TO HOME PAGE
+            window.location = "home-page.html"
+                      
+        }
+    }
+}
+
+
+
 
 

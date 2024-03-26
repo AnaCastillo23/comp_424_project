@@ -97,26 +97,29 @@ body {
     content: 'Password is weak';
     font-size: 15px;
     color: rgb(145, 8, 54);
-    
-
+    margin-inline-start: 20px;
 }
 
 .wrapper.medium .indicator::after {
     content: 'Password is medium';
     font-size: 15px;
     color: rgb(255, 178, 54);
-    
-
+    margin-inline-start: 20px;
 }
 
 .wrapper.strong .indicator::after {
     content: 'Password is strong';
     font-size: 15px;
     color: rgb(17, 130, 54);
-
+    margin-inline-start: 20px;
 }
 
-
+.wrapper .passwordMatchMessage {
+    margin-bottom: 30px;
+    font-size: 15px;
+    margin-inline-start: 20px;
+    color: rgb(145, 8, 54);
+}
 
 .wrapper .remember-forgot {
     display: flex;

@@ -1,0 +1,12 @@
+body {
+    overflow: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('home-page-back.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
