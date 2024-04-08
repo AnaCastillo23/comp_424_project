@@ -13,27 +13,27 @@
   <body>
     <div class="wrapper">
       <div class="signUp">
-        <form action="">
+        <form action="/PHP/sign-up.php" method="POST">
           <h1 class="heading1">Sign Up</h1>
           <div class="input-box">
-            <input type="text" placeholder="First Name" required />
+            <input type="text" placeholder="First Name" name="fname" required />
           </div>
           <div class="input-box">
-            <input type="text" placeholder="Last Name" required />
+            <input type="text" placeholder="Last Name" name="lname" required />
           </div>
           <div>
             <p class="dob-text">Date of Birth:</p>
           </div>
           <div class="input-box">
-            <input type="date" placeholder="Birth Date" required />
+            <input type="date" placeholder="Birth Date" name="bdate" required />
           </div>
 
           <div class="input-box">
-            <input type="email" placeholder="Email" required />
+            <input type="email" placeholder="Email" name="email" required />
             <i class="material-icons">mail</i>
           </div>
           <div class="input-box">
-            <input type="text" placeholder="Username" required />
+            <input type="text" placeholder="Username" name="username" required />
             <i class="material-icons">person</i>
           </div>
 
@@ -43,6 +43,7 @@
                 type="password"
                 placeholder="Password"
                 id="myPassword"
+                name="password"
                 required
               />
               <i class="material-icons">lock</i>
@@ -54,6 +55,7 @@
               type="password"
               placeholder="Confirm Password"
               id="myPasswordReentered"
+              name="repassword"
               required
             />
             <i class="material-icons">lock</i>
@@ -70,7 +72,7 @@
 
           <!--BUTTON TYPE WAS CHANGED TO BUTTON. IT WAS INITIALLY A submit TYPE BUTTON-->
 
-          <button type="button" onclick="checkPassword ()" class="btn">
+          <button type="submit" onclick="checkPassword ()" class="btn" name="signup">
             Sign Up
           </button>
 

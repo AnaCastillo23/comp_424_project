@@ -61,7 +61,6 @@ function checkPassword() {
             //GET RID OF PASSWORD NOT MATCHING MESSAGE
             message.textContent = " ";
             //SEND USER TO HOME PAGE
-            window.location = "home-page.html"
                       
         }
     }
