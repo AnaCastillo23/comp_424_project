@@ -1,6 +1,11 @@
 <?php
 include "dbconnect.php";
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../vendor/autoload.php';
+
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
@@ -9,6 +14,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $repassword = $_POST['repassword'];
+
+    $mail = new PHPMailer(true);
+    $mail->SMTPDebug = 2;
+    $mail->isSMTP();
+    $mail->Mailer = 'smtp';
+    $mail->SMTPAuth = true;
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPSecure = "tls";
+    $mail->Port = 587;
+    $mail->Username = "aovsepyan929@gmail.com";
+    $mail->Password = "ybwlykctponxpfww";
 
     $stmt = $con->prepare("SELECT * FROM user_t WHERE username=?");
     $stmt->bind_param("s", $username);
@@ -33,7 +49,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
                 $stmt->bind_param("ssssss", $fname, $lname, $bdate, $email, $username, $hashed_password);
                 if($stmt->execute()) {
                     echo "<script type='text/javascript'>alert('Signup Successful');</script>";
-                    header("Location: /comp_424_project/html/log-in.html");
+                        try {
+                            $mail->setFrom("noreply@gmail.com");
+                            $mail->addAddress($_POST['email']);
+                            $mail->isHTML(true);
+                            $mail->Subject = 'Email verification';
+                            $mail->Body = "Please verify!";
+                            $mail->send();
+                            header("Location: /comp_424_project/html/log-in.html");
+                        } catch (Exception $e) {
+                            echo $mail->ErrorException;
+                        }
                 } else {
                     echo "<script type='text/javascript'>alert('Signup Failed');
                     window.location = '/comp_424_project/html/sign-up.html';
