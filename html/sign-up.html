@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/html/styles/favicon-round.png"
+    />
     <link rel="stylesheet" href="styles/style.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <div class="wrapper">
@@ -33,7 +39,12 @@
             <i class="material-icons">mail</i>
           </div>
           <div class="input-box">
-            <input type="text" placeholder="Username" name="username" required />
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              required
+            />
             <i class="material-icons">person</i>
           </div>
 
@@ -72,7 +83,18 @@
 
           <!--BUTTON TYPE WAS CHANGED TO BUTTON. IT WAS INITIALLY A submit TYPE BUTTON-->
 
-          <button type="submit" onclick="checkPassword ()" class="btn" name="signup">
+          <div class="form-group">
+            <div
+              class="g-recaptcha"
+              data-sitekey="6Lf34sMpAAAAALehJuas5h6GEL4agTEF_QXTMKF2"
+            ></div>
+          </div>
+          <button
+            type="submit"
+            onclick="checkPassword ()"
+            class="btn"
+            name="signup"
+          >
             Sign Up
           </button>
 

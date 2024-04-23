@@ -7,10 +7,10 @@
     font-family: "Poppins", sans-serif;
 }
 
-html {
+/*html {
     overflow: hidden;
     height: 100%;
-}
+}*/
 
 input {
     color-scheme: dark;
@@ -126,6 +126,7 @@ body {
     justify-content: space-between;
     font-size: 14.5px;
     margin: -15px 0 15;
+    margin-bottom: 20px;
 }
 
 .remember-forgot label input {
