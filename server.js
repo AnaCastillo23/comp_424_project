@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 //Post request is made here
 //we will submit the form using the 'fetch API'. To make request to the server
-app.post('/html/sign-up.html', (req, res) => {
+app.post('http://127.0.0.1:5500/html/sign-up.html', (req, res) => {
     //check if CAPTCHA is undefined, empty or NULL
     if (
         req.body.captcha === undefined ||
