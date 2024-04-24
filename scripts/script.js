@@ -73,6 +73,7 @@ document.getElementById('sign-up-form').addEventListener('submit', submitForm);
 
 function submitForm(e) {
     e.preventDefault();
+    //console.log(123);
     
     const firstName = document.querySelector('#firstName').value;
     const lastName = document.querySelector('#lastName').value;
@@ -84,7 +85,7 @@ function submitForm(e) {
     const captcha = document.querySelector('#g-recaptcha-response').value;
 
     //FETCH THE ROUTE WE WANT TO POST TO
-    fetch('http://127.0.0.1:5500/html/sign-up.html', {
+    fetch('/signUp', {
         method:'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -93,7 +94,7 @@ function submitForm(e) {
         body:JSON.stringify({firstName: firstName, lastName: lastName, birth: birth, email: email,
             username: username, myPassword: myPassword, myPasswordReentered: myPasswordReentered, captcha: captcha})
     })
-    .then((res) => res.json())
+    .then((res) => res.text())
     .then((data) => {
         console.log(data);
     });

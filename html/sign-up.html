@@ -14,13 +14,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
   </head>
   <body>
     <div class="wrapper">
-      <form id="sign-up-form">
+      <form id="sign-up-form" method="post">
         <div class="signUp">
-          <form action="/PHP/sign-up.php" method="POST">
+          <form action="/PHP/sign-up.php" method="post">
             <h1 class="heading1">Sign Up</h1>
             <div class="input-box">
               <input
@@ -109,7 +109,7 @@
 
             <!--BUTTON TYPE WAS CHANGED TO BUTTON. IT WAS INITIALLY A submit TYPE BUTTON-->
 
-            <div class="form-group">
+            <div>
               <div
                 class="g-recaptcha"
                 data-sitekey="6Lf34sMpAAAAALehJuas5h6GEL4agTEF_QXTMKF2"
