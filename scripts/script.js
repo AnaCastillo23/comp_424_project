@@ -66,7 +66,39 @@ function checkPassword() {
     }
 }
 
+//FOR CAPTCHA LOGIC. TO CREATE AN EVENT LISTENER THAT LISTENS FOR A SUBMIT EVEN
+//FROM THE USER
 
+document.getElementById('sign-up-form').addEventListener('submit', submitForm);
+
+function submitForm(e) {
+    e.preventDefault();
+    //console.log(123);
+    
+    const firstName = document.querySelector('#firstName').value;
+    const lastName = document.querySelector('#lastName').value;
+    const birth = document.querySelector('#birth').value;
+    const email = document.querySelector('#email').value;
+    const username = document.querySelector('#username').value;
+    const myPassword = document.querySelector('#myPassword').value;
+    const myPasswordReentered = document.querySelector('#myPasswordReentered').value;
+    const captcha = document.querySelector('#g-recaptcha-response').value;
+
+    //FETCH THE ROUTE WE WANT TO POST TO
+    fetch('/signUp', {
+        method:'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type':'application/json'
+        },
+        body:JSON.stringify({firstName: firstName, lastName: lastName, birth: birth, email: email,
+            username: username, myPassword: myPassword, myPasswordReentered: myPasswordReentered, captcha: captcha})
+    })
+    .then((res) => res.text())
+    .then((data) => {
+        console.log(data);
+    });
+}
 
 
 

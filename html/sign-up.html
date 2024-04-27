@@ -4,86 +4,135 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/html/styles/favicon-rounded-icon.png"
+    />
     <link rel="stylesheet" href="styles/style.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <script src="https://www.google.com/recaptcha/api.js"></script>
   </head>
   <body>
     <div class="wrapper">
-      <div class="signUp">
-        <form action="/PHP/sign-up.php" method="POST">
-          <h1 class="heading1">Sign Up</h1>
-          <div class="input-box">
-            <input type="text" placeholder="First Name" name="fname" required />
-          </div>
-          <div class="input-box">
-            <input type="text" placeholder="Last Name" name="lname" required />
-          </div>
-          <div>
-            <p class="dob-text">Date of Birth:</p>
-          </div>
-          <div class="input-box">
-            <input type="date" placeholder="Birth Date" name="bdate" required />
-          </div>
+      <form id="sign-up-form" method="post">
+        <div class="signUp">
+          <form action="/PHP/sign-up.php" method="post">
+            <h1 class="heading1">Sign Up</h1>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="First Name"
+                id="firstName"
+                name="fname"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="Last Name"
+                id="lastName"
+                name="lname"
+                required
+              />
+            </div>
+            <div>
+              <p class="dob-text">Date of Birth:</p>
+            </div>
+            <div class="input-box">
+              <input
+                type="date"
+                placeholder="Birth Date"
+                id="birth"
+                name="bdate"
+                required
+              />
+            </div>
 
-          <div class="input-box">
-            <input type="email" placeholder="Email" name="email" required />
-            <i class="material-icons">mail</i>
-          </div>
-          <div class="input-box">
-            <input type="text" placeholder="Username" name="username" required />
-            <i class="material-icons">person</i>
-          </div>
+            <div class="input-box">
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                required
+                id="email"
+              />
+              <i class="material-icons">mail</i>
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                id="username"
+                required
+              />
+              <i class="material-icons">person</i>
+            </div>
 
-          <div class="indicator">
+            <div class="indicator">
+              <div class="input-box">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="myPassword"
+                  name="password"
+                  required
+                />
+                <i class="material-icons">lock</i>
+              </div>
+            </div>
+
             <div class="input-box">
               <input
                 type="password"
-                placeholder="Password"
-                id="myPassword"
-                name="password"
+                placeholder="Confirm Password"
+                id="myPasswordReentered"
+                name="repassword"
                 required
               />
               <i class="material-icons">lock</i>
             </div>
-          </div>
 
-          <div class="input-box">
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              id="myPasswordReentered"
-              name="repassword"
-              required
-            />
-            <i class="material-icons">lock</i>
-          </div>
+            <p class="passwordMatchMessage" id="message"></p>
 
-          <p class="passwordMatchMessage" id="message"></p>
+            <div class="remember-forgot">
+              <label
+                ><input type="checkbox" /> I agree to the terms &
+                conditions</label
+              >
+            </div>
 
-          <div class="remember-forgot">
-            <label
-              ><input type="checkbox" /> I agree to the terms &
-              conditions</label
+            <!--BUTTON TYPE WAS CHANGED TO BUTTON. IT WAS INITIALLY A submit TYPE BUTTON-->
+
+            <div>
+              <div
+                class="g-recaptcha"
+                data-sitekey="6Lf34sMpAAAAALehJuas5h6GEL4agTEF_QXTMKF2"
+              ></div>
+            </div>
+            <button
+              type="submit"
+              onclick="checkPassword ()"
+              class="btn"
+              name="signup"
             >
-          </div>
+              Sign Up
+            </button>
 
-          <!--BUTTON TYPE WAS CHANGED TO BUTTON. IT WAS INITIALLY A submit TYPE BUTTON-->
-
-          <button type="submit" onclick="checkPassword ()" class="btn" name="signup">
-            Sign Up
-          </button>
-
-          <div class="sign-in-link">
-            <p>
-              Already have an account?
-              <a href="log-in.html">Login</a>
-            </p>
-          </div>
-        </form>
-      </div>
+            <div class="sign-in-link">
+              <p>
+                Already have an account?
+                <a href="log-in.html">Login</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </form>
     </div>
     <script src="/scripts/script.js"></script>
   </body>

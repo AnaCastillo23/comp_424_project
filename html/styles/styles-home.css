@@ -11,12 +11,12 @@ body{
     overflow: auto;
     height: 100%;
     display: flex;
-    justify-content: center;
     align-items: start;
     min-height: 100vh;
     background: url('Home.png') no-repeat;
     background-size: cover;
     background-position: center;  
+    background-position: center;
 }
 
 .welcome-wrapper .welcome-text, .user-info {
@@ -33,13 +33,20 @@ body{
 }
 
 .file-link-container {
-    margin-top: 400px; /* Adjust as needed */
-    margin-left: 0px; /* Reset margin-right */
-    text-align: left; /* Align text to the left */
+    margin-top: 400px; 
+    margin-left: 0px; 
+    text-align: left;
 
 }
   
   .file-link-container a {
-    color: black;
-    font-size: 32px; /* Adjust as needed */
+    color: white;
+    font-size: 32px; 
+    font-weight: bold;
+}
+
+.website-logo {
+    width: 200px;
+    height: 200px;
+    justify-content: center;
 }
