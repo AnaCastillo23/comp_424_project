@@ -12,16 +12,23 @@
   </head>
   <body>
     <div class="welcome-wrapper">
-      <p class="welcome-text">Welcome User</p>
+      <h2 class="welcome-text">Welcome User</h2>
     </div>
-    <div class="welcome-wrapper">
-    <?php
-    session_start();
-    if (isset($_SESSION['username'])) {
-        echo "Hi, " . $_SESSION['firstname'] . " " . $_SESSION['lastname'] . " you have logged in "
-         . $_SESSION['num_of_logins'] . " times.\nLast Login: ";
-    } 
-    ?>
+    <div class="user-info-wrapper">
+      <p>
+        <?php
+        session_start();
+        if (isset($_SESSION['username'])) {
+            echo "Hi, " . $_SESSION['firstname'] . " " . $_SESSION['lastname'] . " you have logged in "
+            . $_SESSION['num_of_logins'] . " times. <br> Last Login: " . $_SESSION['login_time']; 
+        }  
+        ?>
+      </p>
+    </div>
+    <div class="file-link-container">
+      <p>
+        <a href="../company_confidential_file.txt" download>company-confidential-file.txt</a>
+      </p>
     </div>
   </body>
 </html>

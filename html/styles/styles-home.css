@@ -16,11 +16,30 @@ body{
     min-height: 100vh;
     background: url('Home.png') no-repeat;
     background-size: cover;
-    background-position: center;
-       
+    background-position: center;  
 }
-.welcome-wrapper .welcome-text {
-    font-size: 20px;
+
+.welcome-wrapper .welcome-text, .user-info {
+    font-size: 40px;
     color: white;
     margin-top: 100px;
+    text-align: left;
+}
+
+.user-info-wrapper {
+    font-size: 22px;
+    color: white;
+    margin-top: 200px;
+}
+
+.file-link-container {
+    margin-top: 400px; /* Adjust as needed */
+    margin-left: 0px; /* Reset margin-right */
+    text-align: left; /* Align text to the left */
+
+}
+  
+  .file-link-container a {
+    color: black;
+    font-size: 32px; /* Adjust as needed */
 }
