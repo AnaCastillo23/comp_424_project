@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //$login_query = $con->prepare("SELECT login_time FROM user_login_t WHERE userID = ? AND (SELECT MAX(loginID) FROM user_login_t)");
     $login_query = $con->prepare("SELECT login_time FROM user_login_t WHERE userID = ? ORDER BY loginID DESC LIMIT 1");
     $login_query->bind_param("i", $user_id);
-    echo "User ID: " . $user_id;
     $login_query->execute();
     $login_result = $login_query->get_result();
     $user_login = $login_result->fetch_assoc();
@@ -53,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     } else {
         echo "<script type='text/javascript'>alert('Invalid login credentials.');
-        window.location = '../html/log-in.html';
+        window.location = '../comp_424_project/html/log-in.html';
         </script>";
     }
 
