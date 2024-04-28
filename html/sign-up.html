@@ -18,121 +18,129 @@
   </head>
   <body>
     <div class="wrapper">
-      <form id="sign-up-form" method="post">
-        <div class="signUp">
-          <form action="/PHP/sign-up.php" method="post">
-            <h1 class="heading1">Sign Up</h1>
-            <div class="input-box">
-              <input
-                type="text"
-                placeholder="First Name"
-                id="firstName"
-                name="fname"
-                required
-              />
-            </div>
-            <div class="input-box">
-              <input
-                type="text"
-                placeholder="Last Name"
-                id="lastName"
-                name="lname"
-                required
-              />
-            </div>
-            <div>
-              <p class="dob-text">Date of Birth:</p>
-            </div>
-            <div class="input-box">
-              <input
-                type="date"
-                placeholder="Birth Date"
-                id="birth"
-                name="bdate"
-                required
-              />
-            </div>
+      <div class="signUp">
+        <form action="/PHP/sign-up.php" method="post">
+          <h1 class="heading1">Sign Up</h1>
+          <div class="input-box">
+            <input
+              type="text"
+              placeholder="First Name"
+              id="firstName"
+              name="fname"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <input
+              type="text"
+              placeholder="Last Name"
+              id="lastName"
+              name="lname"
+              required
+            />
+          </div>
+          <div>
+            <p class="dob-text">Date of Birth:</p>
+          </div>
+          <div class="input-box">
+            <input
+              type="date"
+              placeholder="Birth Date"
+              id="birth"
+              name="bdate"
+              required
+            />
+          </div>
 
-            <div class="input-box">
-              <input
-                type="email"
-                placeholder="Email"
-                name="email"
-                required
-                id="email"
-              />
-              <i class="material-icons">mail</i>
-            </div>
-            <div class="input-box">
-              <input
-                type="text"
-                placeholder="Username"
-                name="username"
-                id="username"
-                required
-              />
-              <i class="material-icons">person</i>
-            </div>
+          <div class="input-box">
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              required
+              id="email"
+            />
+            <i class="material-icons">mail</i>
+          </div>
+          <div class="input-box">
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              id="username"
+              required
+            />
+            <i class="material-icons">person</i>
+          </div>
 
-            <div class="indicator">
-              <div class="input-box">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  id="myPassword"
-                  name="password"
-                  required
-                />
-                <i class="material-icons">lock</i>
-              </div>
-            </div>
-
+          <div class="indicator">
             <div class="input-box">
               <input
                 type="password"
-                placeholder="Confirm Password"
-                id="myPasswordReentered"
-                name="repassword"
+                placeholder="Password"
+                id="myPassword"
+                name="password"
                 required
               />
               <i class="material-icons">lock</i>
             </div>
+          </div>
 
-            <p class="passwordMatchMessage" id="message"></p>
+          <div class="input-box">
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              id="myPasswordReentered"
+              name="repassword"
+              required
+            />
+            <i class="material-icons">lock</i>
+          </div>
 
-            <div class="remember-forgot">
-              <label
-                ><input type="checkbox" /> I agree to the terms &
-                conditions</label
-              >
-            </div>
+          <p class="passwordMatchMessage" id="message"></p>
 
-            <!--BUTTON TYPE WAS CHANGED TO BUTTON. IT WAS INITIALLY A submit TYPE BUTTON-->
-
-            <div>
-              <div
-                class="g-recaptcha"
-                data-sitekey="6Lf34sMpAAAAALehJuas5h6GEL4agTEF_QXTMKF2"
-              ></div>
-            </div>
-            <button
-              type="submit"
-              onclick="checkPassword ()"
-              class="btn"
-              name="signup"
+          <div class="remember-forgot">
+            <label
+              ><input type="checkbox" /> I agree to the terms &
+              conditions</label
             >
-              Sign Up
-            </button>
+          </div>
 
-            <div class="sign-in-link">
-              <p>
-                Already have an account?
-                <a href="log-in.html">Login</a>
-              </p>
-            </div>
-          </form>
-        </div>
+          <!--BUTTON TYPE WAS CHANGED TO BUTTON. IT WAS INITIALLY A submit TYPE BUTTON-->
+
+          <!--
+            <div>
+            <div
+              class="g-recaptcha"
+              data-sitekey="6Lf34sMpAAAAALehJuas5h6GEL4agTEF_QXTMKF2"
+            ></div>
+          </div>
+          -->
+
+          <button
+            type="submit"
+            onclick="checkPassword ()"
+            class="btn"
+            name="signup"
+          >
+            Sign Up
+          </button>
+
+          <div class="sign-in-link">
+            <p>
+              Already have an account?
+              <a href="log-in.html">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!--
+        <form id="sign-up-form" method="post">
+        
       </form>
+
+      -->
     </div>
     <script src="/scripts/script.js"></script>
   </body>

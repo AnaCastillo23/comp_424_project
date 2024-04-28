@@ -69,7 +69,7 @@ function checkPassword() {
 //FOR CAPTCHA LOGIC. TO CREATE AN EVENT LISTENER THAT LISTENS FOR A SUBMIT EVEN
 //FROM THE USER
 
-document.getElementById('sign-up-form').addEventListener('submit', submitForm);
+/*document.getElementById('sign-up-form').addEventListener('submit', submitForm);
 
 function submitForm(e) {
     e.preventDefault();
@@ -88,17 +88,19 @@ function submitForm(e) {
     fetch('/signUp', {
         method:'POST',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-type':'application/json'
-        },
-        body:JSON.stringify({firstName: firstName, lastName: lastName, birth: birth, email: email,
-            username: username, myPassword: myPassword, myPasswordReentered: myPasswordReentered, captcha: captcha})
-    })
-    .then((res) => res.text())
-    .then((data) => {
-        console.log(data);
-    });
-}
+            'Accept': 'application/json, text/plain, *///*',
+            //'Content-type':'application/json'
+       // },
+        //body:JSON.stringify({firstName: firstName, lastName: lastName, birth: birth, email: email,
+           // username: username, myPassword: myPassword, myPasswordReentered: myPasswordReentered, captcha: captcha})
+   // })
+    //.then((res) => res.text())
+    //.then((data) => {
+        //console.log(data);
+    //});
+//}
+
+
 
 
 

@@ -1,4 +1,4 @@
-const express = require ('express');
+/*const express = require ('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 
@@ -46,4 +46,4 @@ app.post('/signUp', (req, res) => {
 
 app.listen(5500, () => {
     console.log('Server started on port 5500');
-});
+});*/
