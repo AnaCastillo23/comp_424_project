@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $user_id = $user['userID'];
     $_SESSION['userID'] = $user_id;
-    //$login_query = $con->prepare("SELECT login_time FROM user_login_t WHERE userID = ? AND (SELECT MAX(loginID) FROM user_login_t)");
     $login_query = $con->prepare("SELECT login_time FROM user_login_t WHERE userID = ? ORDER BY loginID DESC LIMIT 1");
     $login_query->bind_param("i", $user_id);
     $login_query->execute();
@@ -22,17 +21,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_login = $login_result->fetch_assoc();
 
     if ($user && password_verify($password, $user['secret'])) {
-        //$user_id = $user['userID'];
         $first_name = $user['firstname'];
         $last_name = $user['lastname'];
-        $logins = $user['num_of_logins'];
         $last_time_loggedin = $user_login['login_time'];
+
+        if ($last_time_loggedin === null) {
+            $last_time_loggedin = "This is the first login";
+        }
         
-        //$_SESSION['userID'] = $user_id;
         $_SESSION['username'] = $username;
         $_SESSION['firstname'] = $first_name;
         $_SESSION['lastname'] = $last_name;
-        $_SESSION['num_of_logins'] = $logins;
         $_SESSION['login_time'] = $last_time_loggedin;
 
         //Increases login counter upon successful login
@@ -40,6 +39,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $update_login_count->bind_param("s", $username);
         $update_login_count->execute();
         $update_login_count->close();
+
+        // Fetch the updated log count
+        $fetch_login_count = $con->prepare("SELECT num_of_logins FROM user_t WHERE username = ?");
+        $fetch_login_count->bind_param("s", $username);
+        $fetch_login_count->execute();
+        $fetch_login_count->bind_result($logins);
+        $fetch_login_count->fetch();
+        $fetch_login_count->close();
+
+        $_SESSION['num_of_logins'] = $logins;
 
         //Tracks when the user logged in. Updates user_login_t
         $login_time = date('Y-m-d H:i:s');
